@@ -20,15 +20,18 @@ jobs:
 
       - name: Make changes to pull request
         run: |
+          git config user.name 'CodeX Team'
+          git config user.email 'codex-team@users.noreply.github.com'
+          git checkout -b update-submodules
           git submodule sync
           git submodule update --init --recursive
           git submodule update --recursive --remote
+          git add -A
+          git commit -m "Update submodules"
 
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.MONO_TOKEN }}
         with:
           token: ${{ secrets.MONO_TOKEN }}
           commit-message: Update report
