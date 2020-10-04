@@ -34,12 +34,6 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.MONO_TOKEN }}
-          commit-message: Update report
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          signoff: false
-          branch: update-submodules
-          delete-branch: true
           title: '[Dispatch] Update submodules'
           body: |
             Update report
