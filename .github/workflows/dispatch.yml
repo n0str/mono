@@ -19,7 +19,7 @@ jobs:
       - run: echo ${{ github.event.client_payload.sha }}
 
       - name: Make changes to pull request
-        run: date +%s > report.txt
+        run: git submodule update --recursive --remote
 
       - name: Create Pull Request
         id: cpr
