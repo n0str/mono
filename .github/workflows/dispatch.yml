@@ -21,6 +21,9 @@ jobs:
       - name: Make changes to pull request
         run: |
           touch 123
+          git submodule sync
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
 
       - name: Create Pull Request
         id: cpr
