@@ -1,9 +1,9 @@
 name: Repository Dispatch
 on:
   repository_dispatch:
-    types: [tests]
+    types: [my-event]
 jobs:
-  tests:
+  myEvent:
     runs-on: ubuntu-latest
     steps:
       - name: Dump the client payload context
