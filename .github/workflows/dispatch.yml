@@ -19,7 +19,7 @@ jobs:
       - run: echo ${{ github.event.client_payload.sha }}
 
       - name: Make changes to pull request
-        run: git submodule update --recursive --remote
+        run: git submodule update --init --recursive
 
       - name: Create Pull Request
         id: cpr
@@ -47,5 +47,4 @@ jobs:
           team-reviewers: |
             owners
             maintainers
-          milestone: 1
           draft: false
